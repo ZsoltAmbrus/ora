@@ -53,3 +53,45 @@ formButton.addEventListener('click', () => {
         console.log(input.value);
     });
 });
+
+
+//const lista = document.querySelector('#lista');
+//const li = document.createElement('li');
+//li.textContent = 'alma';
+//lista.append(li)
+
+//const li2 = document.createElement('li');
+//li2.textContent = 'körte';
+//lista.appendChild(li2)
+
+const nevlista = document.querySelector('#nevlista');
+
+const nevek = ['Béla', 'Lajos', 'Ferenc', 'Dénes'];
+
+nevek.forEach((nev) => {
+    const li = document.createElement('li');
+    li.textContent = nev;
+    nevlista.append(li)
+});
+
+const nameInput = document.querySelector('#name');
+const addButton = document.querySelector('#addButton');
+addButton.addEventListener('click', ()  => {
+    //alert('megye') jo 
+startAdd();
+})
+
+function startAdd(){
+    //alert('egi') jo
+    const name = nameInput.value;
+    nevek.push(name) //hozzá fűzi
+    //alert(nevek)
+    nevlista.append(makeLi(name)); // hozzá adja most már alistához
+    
+}
+
+function makeLi(text) {
+    var li = document.createElement('li');
+    li.textContent = text;
+    return li; 
+}
